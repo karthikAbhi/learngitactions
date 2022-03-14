@@ -11,6 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+    - name: clean-environment
+      run: |
+        echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/ros-latest.list
+      
     - uses: ros-tooling/setup-ros@v0.2
       with:
         required-ros-distributions: melodic
