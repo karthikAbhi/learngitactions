@@ -14,6 +14,9 @@ jobs:
     - name: clean-environment
       run: |
         echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/ros-latest.list
+        sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+        sudo apt update
+        sudo apt install ros-melodic-desktop-full
       
     - uses: ros-tooling/setup-ros@v0.2
       with:
@@ -22,4 +25,3 @@ jobs:
       with:
         package-name: my_package
         target-ros1-distro: melodic
-        skip-tests: true
