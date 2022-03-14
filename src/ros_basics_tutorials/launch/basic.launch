@@ -1,0 +1,6 @@
+<launch>
+    <node name="subscriber" pkg="ros_basics_tutorials" type="talker.py" output="screen"
+        launch-prefix="valgrind --tool=callgrind --callgrind-out-file='callgrind.listener.%p'" />
+    <node name="listener" pkg="ros_basics_tutorials" type="listener.py" output="screen"
+        launch-prefix="valgrind --tool=callgrind --callgrind-out-file='callgrind.talker.%p'" />    
+</launch>
