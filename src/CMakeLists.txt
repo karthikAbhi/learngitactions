@@ -26,8 +26,8 @@ endif()
 if(_res EQUAL 0)
   set(catkin_EXTRAS_DIR "${CMAKE_SOURCE_DIR}/${_out}/cmake")
   # include all.cmake without add_subdirectory to let it operate in same scope
-  include(${catkin_EXTRAS_DIR}/all.cmake NO_POLICY_SCOPE)
-  add_subdirectory("${_out}")
+  # include(${catkin_EXTRAS_DIR}/all.cmake NO_POLICY_SCOPE)
+  # add_subdirectory("${_out}")
 
 else()
   # use either CMAKE_PREFIX_PATH explicitly passed to CMake as a command line argument
